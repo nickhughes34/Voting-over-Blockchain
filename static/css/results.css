@@ -1,0 +1,31 @@
+html{
+  font-family: montserrat, arial, verdana;
+  background: #005FB8;
+  background: linear-gradient(217deg, #ff0000, rgba(255,0,0,0) 70%),
+                       linear-gradient(127deg, #ff0000, rgba(0,255,0,0) 40%),
+                        linear-gradient(336deg, #ff0000, rgba(0,0,255,0) 50%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+.header{
+  text-align: center;
+  font-family: 'Titan One', cursive;
+  //text-shadow: 1px 0 10px #FFC900;
+  text-shadow: 1px 1px 10px #FFC900, 0 0 0.5em #FFC900, 0 0 0.2em #FFC900;
+}
+
+table{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+td{
+  margin: 20px;
+  padding: 20px;
+  width: 25%;
+}

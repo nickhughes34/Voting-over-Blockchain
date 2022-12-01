@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Voting</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/voting.css')}}">
+
+    <link rel="icon" href="{{url_for('static', filename='images/min-logo.png')}}">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+
+</head>
+  <body ng-app="VotinglPage" ng-controller="MainController">
+    <h1 class="header">Government Voting</h1><hr>
+
+    <main id="main" class="main">
+
+      <div class="menu">
+      <div class="picks" ng-repeat="item in picks">
+        <div><img src="{{url_for('static', filename= 'images/logo.png' )}}" alt="img of pol"></div>
+          <p><span class="nameTag">Name:</span> {{ '{{item.FName}}' }} {{ '{{item.LName}}' }}</p>
+          <p><span class="nameTag">Party:</span> {{ '{{item.Party}}' }}</p>
+          <p><span class="nameTag">Age:</span> {{ '{{item.Age}}' }}</p>
+          <div class="center">
+                <input id ="Vote {{ '{{$index}}' }}" class = "Vote" type="button" name="Vote" value="Vote" ng-click="Vote($index, $event)">
+          </div>
+      </div>
+      </div>
+
+      <form id="form" class="form" action="/vote" method="post" >
+
+        <input id="firstName" type="text" name="firstName" style="display: none;">
+        <input id="lastName" type="text" name="lastName" style="display: none;">
+        <input id="party" type="text" name="party" style="display: none;">
+        <input id="age" type="text" name="age" style="display: none;">
+
+        <div class="center">
+              <input id="confirm" class = "Confirm" type="button" value="Confirm" onclick="validation();">
+        </div>
+
+      </form>
+
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/603d518eab.js" crossorigin="anonymous"></script>
+    <!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="{{url_for('static', filename='js/angular.js')}}"></script>
+  <script src="{{url_for('static', filename='js/voting.js')}}"></script>
+  </body>
+</html>
